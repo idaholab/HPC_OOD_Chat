@@ -1,0 +1,87 @@
+<!-- Copyright 2024, Battelle Energy Alliance, LLC, ALL RIGHTS RESERVED -->
+
+<!-- This is needed for icons, otherwise they don't show up -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+<div class="fabs" style="resize: both; overflow: auto; display:none;">
+    <div id="chatbox" class="chat" style="display: none;">
+        <!-- Chat header -->
+        <div class="chat_header">
+            <div class="chat_option">
+                <span id="chat_head">HPC AI (Beta)</span>
+                <span class="chat_fullscreen_loader">
+                    <span id="chat_info_loader">
+                        <i id="info-popup" class="fullscreen zmdi zmdi-info" title="Information"></i>
+                    </span>
+                    <span id="chat_feedback_loader">
+                        <i id="comment-popup" class="fullscreen zmdi zmdi-comment-text" title="Feedback"></i>
+                    </span>
+                    <span id="chat_reset_loader">
+                        <i class="fullscreen zmdi zmdi-refresh" title="Reset Conversation"></i>
+                    </span>
+                    <span id="close_popup">
+                        <i class="fullscreen zmdi zmdi-close"title="Close Chat Window"></i>
+                    </span>
+                    <!-- Currently has some sizing issues -->
+                    <!-- <span id="chat_fullscreen_loader">
+                        <i class="fullscreen zmdi zmdi-window-maximize" title="Fullscreen"></i>
+                    </span> -->
+                </span>
+            </div>
+        </div>
+        
+        <!-- Default chat -->
+        <div id="chat_converse" class="chat_conversion chat_converse">
+        </div>
+
+        <!-- Informational Display and back button -->
+        <div id="information_converse" class="chat_conversion chat_converse">
+            <a id="help_chat" class="fab"><i class="zmdi zmdi-arrow-left"></i></a>
+            <span id="info-display" class="chat_msg_item chat_msg_item_admin">
+                <div class="chat_avatar">
+                    <!-- URL Set with JS -->
+                </div>
+                <!-- Populated from JS variable -->
+            </span>
+        </div>
+
+        <!-- Shows a form for feedback in the chat window -->
+        <div id="chat_form" class="chat_converse chat_form">
+            <a id="send_feedback_button" class="fab"><i class="zmdi zmdi-arrow-left"></i></a>
+            <span class="chat_msg_item chat_msg_item_admin">
+                <div class="chat_avatar">
+                    <!-- URL Set with JS -->
+                </div>
+                If you would like to leave feedback, please use the form below. Your feedback will help us to improve the chat functionality.
+                <form class="message_form">
+                    <input type="email" id="message_form_email" placeholder="Your email" required/>
+                    <input id="message_form_subject" placeholder="Subject" required/>
+                    <textarea rows="4" placeholder="Your message" id="message_form_content"></textarea>
+                    <button>Send</button> 
+                </form>
+            </span>
+        </div>
+
+        <!-- This is the bottom send message field -->
+        <div id="chatbox_fab_field" class="fab_field">
+            <a id="fab_send" class="fab"><i id="send_button" class="zmdi zmdi-mail-send"></i></a>
+            <textarea id="chatSend" name="chat_message" placeholder="Send a message" class="chat_field chat_message"></textarea>
+        </div>
+
+    </div>
+
+    <!-- This is the button that displays/hides chat that hangs out in the bottom right of the screen -->
+    <a id="prime" class="fab"><i class="prime zmdi zmdi-comment"></i></a>
+</div>
+
+<div id="bot_hello" class="speech bottom" style="display:none">
+    <span id="close_hello_window"style="position:absolute;right:5%;top:10%">
+        <i class="fullscreen zmdi zmdi-close"title="Close Window"></i>
+    </span>
+    <div class="chat_avatar">
+        <!-- URL Set with JS -->
+        <span class="chat_intro">
+            Hi! I'm an HPC AI. How can I help?
+        </span>
+    </div>
+</div>
