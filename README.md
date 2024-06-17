@@ -41,7 +41,7 @@ The endpoints that are used are:
 /chat/completions       # Communicate with the generation API
 ```
 
-There are a few additional endpoints that were setup for feedback. Those endpoints are:
+There are a few additional endpoints that were setup for feedback. These are not needed. Those endpoints are:
 ```
 /message_feedback       # Provides feedback on a given message
 /feedback               # Provide general feedback via an HTML form
