@@ -1,6 +1,8 @@
 # Open OnDemand Chatbot
 This is a frontend only, OpenAI API streaming/RAG compatible, chat interface for Open OnDemand. This is meant to be as minimally invasive to the primary web app as possible. This does present security challenges as API keys would be exposed in the public javascript. To prevent this, I recommend setting up a gateway that interacts with your LLM/RAG API but can filter access.
 
+To learn more about this, email brandon.biggs@inl.gov or read our paper - https://www.osti.gov/biblio/2352719
+
 ## Setting this up in your environment
 The only configuration options that absolutely need to be changed are at the top of `index.js`. This is where you can set the prompt, support email, URLs, etc. Go through the top of this file and configure this for your environment.
 
@@ -48,16 +50,20 @@ There are a few additional endpoints that were setup for feedback. These are not
 ```
 
 ## Vector Database
-This was a custom endpoint that was    
+This was a custom endpoint that was setup to support retrieval augmented generation. This is also not needed but will drastically improve the results of your llm.
 ```
 /search_vdb             # Search vector database
 ```
 
 ## Known Bugs
-- Smaller size screens don't scale very well, conversely, if the screen is too big there are some transparency issues with the bottom of the chat box
+- Smaller size screens don't scale very well. Conversely, if the screen is too big there are some transparency issues with the bottom of the chat box
 - Sometimes the LLM gets stuck in a huge never ending loop? LLM side seems to work fine with streaming so probably an issue on JS
 
 ## Future Improvements
 - Get the little chat icon to not continue past page footer
 - When fullscreening the app, don't let it continue past nav bar
 - Fix the issues with bigger/smaller screens
+
+## Example
+![alt text](images/chat-interface.png "Title")
+
